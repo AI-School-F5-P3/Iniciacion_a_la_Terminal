@@ -130,7 +130,7 @@ Ejercicios básicos con explicaciones para el uso la terminal en Windows (PowerS
 
 # Ejercicios Iniciación terminal Linux 
 
-Vamos a practicar un poco con la terminal de Linux con una serie de ejercicios, para ello vamos a utilizar la siguiente web: Webimal (https://www.webminal.org/) 
+Vamos a practicar un poco con la terminal de Linux con una serie de ejercicios, para ello vamos a utilizar la siguiente web: [Webimal](https://www.webminal.org/) 
 
 🖥️ Abre un terminal y escribe los comandos que te permitan realizar las siguientes acciones: 
 
