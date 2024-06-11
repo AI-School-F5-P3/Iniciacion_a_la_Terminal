@@ -136,7 +136,7 @@ Vamos a practicar un poco con la terminal de Linux con una serie de ejercicios, 
 
 1. Crea un archivo de tamaño 0 
 
-`<span style="color:yellow";>touch</span> arch_tam0`
+`touch arch_tam0`
 
 2. Listar todos los archivos del directorio bin. 
 
@@ -162,67 +162,140 @@ Vamos a practicar un poco con la terminal de Linux con una serie de ejercicios, 
 
 6. Listar todos los archivos, incluidos los ocultos, del directorio raíz. 
 
-ls -la /
+`ls -la /`
 
 7. Listar todos los archivos del directorio etc que no empiecen por t.
+
 ls -I “t*” /etc 
+
 ls  ignore=t* /etc 
+
 8. Listar todos los archivos del directorio usr y sus subdirectorios. 
+
 ls -R /usr 
+
 9. Cambiarse al directorio tmp y verificarlo. 
-cd /tmp 
-pwd 
+
+cd /tmp
+
+pwd
+
 10. Mostrar el día y la hora actual. 
-date 
+
+date
+
 11. Con un solo comando posicionarse en el directorio $HOME y verificarlo. 
-cd 
-pwd 
+
+cd
+
+pwd
+
 12. Crear los directorios dir1, dir2 y dir3 en el directorio PRUEBA. Dentro de dir1 crear el directorio dir11. Dentro del directorio dir3 crear el directorio dir31. Dentro del directorio dir31, crear los directorios dir311 y dir312. 
+
 cd 
+
 mkdir PRUEBA 
+
 mkdir dir1 & mkdir dir2 & mkdir dir3 
+
 mkdir dir1/dir11 & mkdir dir3/dir31 
+
 mkdir dir31/dir311 & mkdir dir31/dir312 
-13. Copiar un archivo /etc/motd a un archivo llamado mensaje de vuestro directorio PRUEBA. cp /etc/motd /home/usuario/PRUEBA/mensaje 
-14. Copiar mensaje en dir1 y dir2, y verificarlo. 
+
+13. Copiar un archivo /etc/motd a un archivo llamado mensaje de vuestro directorio PRUEBA. 
+
+cp /etc/motd /home/usuario/PRUEBA/mensaje
+
+14. Copiar mensaje en dir1 y dir2, y verificarlo.
+
 cp mensaje ~/PRUEBA/dir1 & cp mensaje ~/PRUEBA/dir2
+
 ls -R /PRUEBA 
-15. Copiar en el directorio dir311 los archivos de /bin que tengan una a como segunda letra y su nombre tenga cuatro letras. 
+
+15. Copiar en el directorio dir311 los archivos de /bin que tengan una a como segunda letra y su nombre tenga cuatro letras.
+
 cp /bin/?[a] /home/usuario/PRUEBA/dir3/dir311 
+
 16. Mover el directorio dir31 y sus subdirectorios debajo de dir2. 
-mv –r ~/PRUEBA/dir3/dir31 ~/PRUEBA/dir2/ 
-17. Mostrar por pantalla los archivos ordinarios del directorio HOME y sus subdirectorios. ls -R /home 
+
+mv –r ~/PRUEBA/dir3/dir31 ~/PRUEBA/dir2/
+
+17. Mostrar por pantalla los archivos ordinarios del directorio HOME y sus subdirectorios. 
+
+ls -R /home
+
 18. Ocultar el archivo mensaje del directorio dir3. 
-mv /home/usuario/PRUEBA/dir3/mensaje /home/usuario/PRUEBA/dir3/.mensaje 19. Borrar los archivos y directorios de dir1, incluido el propio directorio. 
+
+mv /home/usuario/PRUEBA/dir3/mensaje /home/usuario/PRUEBA/dir3/.mensaje 
+
+19. Borrar los archivos y directorios de dir1, incluido el propio directorio. 
+
 rm -rf /home/usuario/PRUEBA/dir1 
+
 rm -R dir1 
+
 20. Copiar al directorio dir312 los ficheros del directorio /dev que empiecen por t, acaben en una letra que vaya de la a la b y tengan cinco letras en su nombre. 
+
 cp /dev/t???[a-b] /home/usuario/PRUEBA/dir3/dir312 
+
 21. Mover el directorio dir312 debajo de dir3. 
-mv /home/usuario/PRUEBA/dir3/dir31/dir312 /home/usuario/PRUEBA/dir3/dir312 22. Crear un enlace simbólico al directorio dir1 dentro del directorio dir3 llamado enlacedir1. ln -s /home/usuario/PRUEBA/dir1 /home/usuario/PRUEBA/dir3/enlacedir1
+mv /home/usuario/PRUEBA/dir3/dir31/dir312 /home/usuario/PRUEBA/dir3/dir312 
+
+22. Crear un enlace simbólico al directorio dir1 dentro del directorio dir3 llamado enlacedir1. 
+
+ln -s /home/usuario/PRUEBA/dir1 /home/usuario/PRUEBA/dir3/enlacedir1
+
 23. Utilizando el enlace enlacedir1 copiar los archivos que empiecen por u del directorio /bin en directorio nuevo1. 
+
 cp /bin/u* enlacedir1/nuevo1/ 
+
 ls /bin/u* > cp /home/usuario/PRUEBA/dir3/enlacedir1 
+
 24. Crear un enlace simbólico (llamado enlafich1) a un fichero enlace de dir2 en dir1. 
+
 ln -s /home/usuario/PRUEBA/dir2/enlace 
+
 /home/usuario/PRUEBA/dir1/enlacefich1 
+
 25. Posicionarse en dir1 y, mediante el enlace enlafich1 copiar el archivo fich1 dentro de dir311. 
+
 cp  /fich1 enlafich1/dir31/dir311 
+
 26. Seguir en dir1 y, mediante el enlace enlafich1, sacar por pantalla las líneas que tiene el archivo fich1. 
+
 cd /home/usuario/PRUEBA/dir1 
+
 cat enlacefich1 
-27. Borrar todos los archivos y directorios creados en el directorio PRUEBA. rm -R PRUEBA 
+
+27. Borrar todos los archivos y directorios creados en el directorio PRUEBA. 
+
+rm -R PRUEBA 
+
 28. Crear el directorio dir2 y dir3 en el directorio PRUEBA. 
-mkdir /home/usuario/PRUEBA/dir2 & mkdir /home/usuario/PRUEBA/dir3 29. Eliminar todos los permisos de escritura (propietario, grupo, otros) del directorio dir2. chmod u-w,g-w,a-w /home/usuario/PRUEBA/dir2 
+
+mkdir /home/usuario/PRUEBA/dir2 & mkdir /home/usuario/PRUEBA/dir3 
+
+29. Eliminar todos los permisos de escritura (propietario, grupo, otros) del directorio dir2. 
+
+chmod u-w,g-w,a-w /home/usuario/PRUEBA/dir2 
+
 30. Cambiar el directorio actual al directorio dir3, y crear cuatro nuevos directorios llamados dira, dirb, dirc, y dird bajo el directorio actual.
+
 mkdir dira & mkdir dirb & mkdir dirc 
-31. Comprobar los permisos de acceso de los directorios recién creados. ls -la 
+
+31. Comprobar los permisos de acceso de los directorios recién creados. 
+
+ls -la
+
 32. Crear el fichero uno. Quitarle todos los permisos de lectura. Comprobarlo. Intentar borrar dicho fichero. 
-touch uno 
+
+> `touch uno 
 chmod u-r,g-r,a-r uno 
 ls -l uno 
-rm uno 
-33. Crear en el directorio actual un directorio carpeta1 con los tres permisos para el propietario, dentro de él fich1 con lectura y escritura para todos y fich2 con lectura y escritura para el propietario y solo lectura para el resto. El directorio carpeta2 con todos los permisos para el propietario y lectura y ejecución para los del mismo grupo. Dentro file1 con lectura y escritura para el propietario y los del grupo y file2 con los mismos para el propietario y solo lectura para el grupo. 
+rm uno`
+
+33. Crear en el directorio actual un directorio carpeta1 con los tres permisos para el propietario, dentro de él fich1 con lectura y escritura para todos y fich2 con lectura y escritura para el propietario y solo lectura para el resto. El directorio carpeta2 con todos los permisos para el propietario y lectura y ejecución para los del mismo grupo. Dentro file1 con lectura y escritura para el propietario y los del grupo y file2 con los mismos para el propietario y solo lectura para el grupo.
+
 mkdir carpeta1 
 chmod u+rwx 
 mkdir carpeta2 
