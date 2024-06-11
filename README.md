@@ -132,14 +132,16 @@ Ejercicios básicos con explicaciones para el uso la terminal en Windows (PowerS
 
 Vamos a practicar un poco con la terminal de Linux con una serie de ejercicios, para ello vamos a utilizar la siguiente web: Webimal (https://www.webminal.org/) 
 
-Abre un terminal y escribe los comandos que te permitan realizar las siguientes acciones: 
+🖥️ Abre un terminal y escribe los comandos que te permitan realizar las siguientes acciones: 
 
 1. Crea un archivo de tamaño 0 
-touch arch_tam0 
+
+`<span style="color:yellow";>touch</span> arch_tam0`
 
 2. Listar todos los archivos del directorio bin. 
 
 `ls /bin`
+
 3. Listar todos los archivos del directorio etc que empiecen por t en orden inverso. 
 
 `ls /etc/t* -r`
@@ -151,11 +153,17 @@ touch arch_tam0
 `ls /dev/tty`
 
 5. Listar todos los archivos del directorio dev que empiecen por tty y acaben en 1,2,3 ó 4. 
-ls /dev/tty[1,2,3,4] 
-ls /dev/tty[1-4] 
-ls /dev/tty*[1-4] 
+
+`ls /dev/tty[1,2,3,4]`
+
+`ls /dev/tty[1-4]`
+
+`ls /dev/tty*[1-4]`
+
 6. Listar todos los archivos, incluidos los ocultos, del directorio raíz. 
-ls -la / 
+
+ls -la /
+
 7. Listar todos los archivos del directorio etc que no empiecen por t.
 ls -I “t*” /etc 
 ls  ignore=t* /etc 
