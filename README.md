@@ -134,158 +134,157 @@ Vamos a practicar un poco con la terminal de Linux con una serie de ejercicios, 
 
 🖥️ Abre un terminal y escribe los comandos que te permitan realizar las siguientes acciones: 
 
-1. Crea un archivo de tamaño 0 
+**1.** Crea un archivo de tamaño 0 
 
-`touch arch_tam0`
+>`touch arch_tam0`
 
-2. Listar todos los archivos del directorio bin. 
+**2.** Listar todos los archivos del directorio `bin`. 
 
-`ls /bin`
+>`ls /bin`
 
-3. Listar todos los archivos del directorio etc que empiecen por t en orden inverso. 
+**3.** Listar todos los archivos del directorio etc que empiecen por `t` en orden inverso. 
 
-`ls /etc/t* -r`
+>`ls /etc/t* -r`
+>
+>`ls –r /etc | grep ^t`
 
-`ls –r /etc | grep ^t`
+**4.** Listar todos los archivos del directorio dev que empiecen por `tty` y tengan `5` caracteres. 
 
-4. Listar todos los archivos del directorio dev que empiecen por tty y tengan 5 caracteres. 
+>`ls /dev/tty`
 
-`ls /dev/tty`
+**5.** Listar todos los archivos del directorio dev que empiecen por `tty` y acaben en `1`,`2`,`3` ó `4`. 
 
-5. Listar todos los archivos del directorio dev que empiecen por tty y acaben en 1,2,3 ó 4. 
+>`ls /dev/tty[1,2,3,4]`
+>
+>`ls /dev/tty[1-4]`
+>
+>`ls /dev/tty*[1-4]`
 
-`ls /dev/tty[1,2,3,4]`
+**6.** Listar todos los archivos, incluidos los ocultos, del directorio raíz. 
 
-`ls /dev/tty[1-4]`
+>`ls -la /`
 
-`ls /dev/tty*[1-4]`
+**7.** Listar todos los archivos del directorio etc que no empiecen por `t`.
 
-6. Listar todos los archivos, incluidos los ocultos, del directorio raíz. 
+>`ls -I “t*” /etc`
+>
+>`ls  ignore=t* /etc`
 
-`ls -la /`
+**8.** Listar todos los archivos del directorio usr y sus subdirectorios. 
 
-7. Listar todos los archivos del directorio etc que no empiecen por t.
+>`ls -R /usr`
 
-ls -I “t*” /etc 
+**9.** Cambiarse al directorio tmp y verificarlo. 
 
-ls  ignore=t* /etc 
+>`cd /tmp`
+>
+>`pwd`
 
-8. Listar todos los archivos del directorio usr y sus subdirectorios. 
+**10.** Mostrar el día y la hora actual.
 
-ls -R /usr 
+>`date`
 
-9. Cambiarse al directorio tmp y verificarlo. 
+**11.** Con un solo comando posicionarse en el directorio `$HOME` y verificarlo.
 
-cd /tmp
+>`cd`
+>
+>`pwd`
 
-pwd
+**12.** Crear los directorios **dir1**, **dir2** y **dir3** en el directorio **PRUEBA**. Dentro de **dir1** crear el directorio **dir11**. Dentro del directorio **dir3** crear el directorio **dir31**. Dentro del directorio **dir31**, crear los directorios **dir311** y **dir312**. 
 
-10. Mostrar el día y la hora actual. 
+>`cd`
+>
+>`mkdir PRUEBA`
+>
+>`mkdir dir1 & mkdir dir2 & mkdir dir3`
+>
+>`mkdir dir1/dir11 & mkdir dir3/dir31`
+>
+>`mkdir dir31/dir311 & mkdir dir31/dir312`
 
-date
+**13.** Copiar un archivo /etc/motd a un archivo llamado mensaje de vuestro directorio **PRUEBA**.
 
-11. Con un solo comando posicionarse en el directorio $HOME y verificarlo. 
+>`cp /etc/motd /home/usuario/PRUEBA/mensaje`
 
-cd
+**14.** Copiar mensaje en **dir1** y **dir2**, y verificarlo.
 
-pwd
+>`cp mensaje ~/PRUEBA/dir1 & cp mensaje ~/PRUEBA/dir2`
+>
+>`ls -R /PRUEBA`
 
-12. Crear los directorios dir1, dir2 y dir3 en el directorio PRUEBA. Dentro de dir1 crear el directorio dir11. Dentro del directorio dir3 crear el directorio dir31. Dentro del directorio dir31, crear los directorios dir311 y dir312. 
+**15.** Copiar en el directorio **dir311** los archivos de /bin que tengan una a como segunda letra y su nombre tenga cuatro letras.
 
-cd 
+>`cp /bin/?[a] /home/usuario/PRUEBA/dir3/dir311`
 
-mkdir PRUEBA 
+**16.** Mover el directorio dir31 y sus subdirectorios debajo de **dir2**.
 
-mkdir dir1 & mkdir dir2 & mkdir dir3 
+>`mv –r ~/PRUEBA/dir3/dir31 ~/PRUEBA/dir2/`
 
-mkdir dir1/dir11 & mkdir dir3/dir31 
+**17.** Mostrar por pantalla los archivos ordinarios del directorio HOME y sus subdirectorios. 
 
-mkdir dir31/dir311 & mkdir dir31/dir312 
+`ls -R /home`
 
-13. Copiar un archivo /etc/motd a un archivo llamado mensaje de vuestro directorio PRUEBA. 
+**18.** Ocultar el archivo mensaje del directorio **dir3**.
 
-cp /etc/motd /home/usuario/PRUEBA/mensaje
+>`mv /home/usuario/PRUEBA/dir3/mensaje /home/usuario/PRUEBA/dir3/.mensaje`
 
-14. Copiar mensaje en dir1 y dir2, y verificarlo.
+**19.** Borrar los archivos y directorios de dir1, incluido el propio directorio. 
 
-cp mensaje ~/PRUEBA/dir1 & cp mensaje ~/PRUEBA/dir2
+>`rm -rf /home/usuario/PRUEBA/dir1`
+>
+>`rm -R dir1`
 
-ls -R /PRUEBA 
+**20.** Copiar al directorio **dir312** los ficheros del directorio `/dev` que empiecen por `t`, acaben en una letra que vaya de la `a` la `b` y tengan cinco letras en su nombre. 
 
-15. Copiar en el directorio dir311 los archivos de /bin que tengan una a como segunda letra y su nombre tenga cuatro letras.
+>`cp /dev/t???[a-b] /home/usuario/PRUEBA/dir3/dir312`
 
-cp /bin/?[a] /home/usuario/PRUEBA/dir3/dir311 
+**21.** Mover el directorio dir312 debajo de **dir3**.
 
-16. Mover el directorio dir31 y sus subdirectorios debajo de dir2. 
+>`mv /home/usuario/PRUEBA/dir3/dir31/dir312 /home/usuario/PRUEBA/dir3/dir312`
 
-mv –r ~/PRUEBA/dir3/dir31 ~/PRUEBA/dir2/
+**22.** Crear un enlace simbólico al directorio dir1 dentro del directorio dir3 llamado **enlacedir1**.
 
-17. Mostrar por pantalla los archivos ordinarios del directorio HOME y sus subdirectorios. 
+>`ln -s /home/usuario/PRUEBA/dir1 /home/usuario/PRUEBA/dir3/enlacedir1`
 
-ls -R /home
+**23.** Utilizando el enlace **enlacedir1** copiar los archivos que empiecen por `u` del directorio `/bin` en directorio **nuevo1**. 
 
-18. Ocultar el archivo mensaje del directorio dir3. 
+>`cp /bin/u* enlacedir1/nuevo1/`
+>
+>`ls /bin/u* > cp /home/usuario/PRUEBA/dir3/enlacedir1`
 
-mv /home/usuario/PRUEBA/dir3/mensaje /home/usuario/PRUEBA/dir3/.mensaje 
+**24.** Crear un enlace simbólico (llamado **enlafich1**) a un fichero enlace de **dir2** en **dir1**. 
 
-19. Borrar los archivos y directorios de dir1, incluido el propio directorio. 
+>`ln -s /home/usuario/PRUEBA/dir2/enlace /home/usuario/PRUEBA/dir1/enlacefich1`
 
-rm -rf /home/usuario/PRUEBA/dir1 
+**25.** Posicionarse en **dir1** y, mediante el enlace **enlafich1** copiar el archivo **fich1** dentro de **dir311**. 
 
-rm -R dir1 
+>`cp  /fich1 enlafich1/dir31/dir311`
 
-20. Copiar al directorio dir312 los ficheros del directorio /dev que empiecen por t, acaben en una letra que vaya de la a la b y tengan cinco letras en su nombre. 
+**26.** Seguir en dir1 y, mediante el enlace **enlafich1**, sacar por pantalla las líneas que tiene el archivo **fich1**.
 
-cp /dev/t???[a-b] /home/usuario/PRUEBA/dir3/dir312 
+>`cd /home/usuario/PRUEBA/dir1`
+>
+>`cat enlacefich1`
 
-21. Mover el directorio dir312 debajo de dir3. 
-mv /home/usuario/PRUEBA/dir3/dir31/dir312 /home/usuario/PRUEBA/dir3/dir312 
+**27.** Borrar todos los archivos y directorios creados en el directorio **PRUEBA**. 
 
-22. Crear un enlace simbólico al directorio dir1 dentro del directorio dir3 llamado enlacedir1. 
+>`rm -R PRUEBA`
 
-ln -s /home/usuario/PRUEBA/dir1 /home/usuario/PRUEBA/dir3/enlacedir1
+**28.** Crear el directorio dir2 y dir3 en el directorio **PRUEBA**. 
 
-23. Utilizando el enlace enlacedir1 copiar los archivos que empiecen por u del directorio /bin en directorio nuevo1. 
+>`mkdir /home/usuario/PRUEBA/dir2 & mkdir /home/usuario/PRUEBA/dir3`
 
-cp /bin/u* enlacedir1/nuevo1/ 
+**29.** Eliminar todos los permisos de escritura (propietario, grupo, otros) del directorio **dir2**. 
 
-ls /bin/u* > cp /home/usuario/PRUEBA/dir3/enlacedir1 
+>`chmod u-w,g-w,a-w /home/usuario/PRUEBA/dir2`
 
-24. Crear un enlace simbólico (llamado enlafich1) a un fichero enlace de dir2 en dir1. 
+**30.** Cambiar el directorio actual al directorio **dir3**, y crear cuatro nuevos directorios llamados **dira**, **dirb**, **dirc**, y **dird** bajo el directorio actual.
 
-ln -s /home/usuario/PRUEBA/dir2/enlace 
+>`mkdir dira & mkdir dirb & mkdir dirc`
 
-/home/usuario/PRUEBA/dir1/enlacefich1 
+**31.** Comprobar los permisos de acceso de los directorios recién creados. 
 
-25. Posicionarse en dir1 y, mediante el enlace enlafich1 copiar el archivo fich1 dentro de dir311. 
-
-cp  /fich1 enlafich1/dir31/dir311 
-
-26. Seguir en dir1 y, mediante el enlace enlafich1, sacar por pantalla las líneas que tiene el archivo fich1. 
-
-cd /home/usuario/PRUEBA/dir1 
-
-cat enlacefich1 
-
-27. Borrar todos los archivos y directorios creados en el directorio PRUEBA. 
-
-rm -R PRUEBA 
-
-28. Crear el directorio dir2 y dir3 en el directorio PRUEBA. 
-
-mkdir /home/usuario/PRUEBA/dir2 & mkdir /home/usuario/PRUEBA/dir3 
-
-29. Eliminar todos los permisos de escritura (propietario, grupo, otros) del directorio dir2. 
-
-chmod u-w,g-w,a-w /home/usuario/PRUEBA/dir2 
-
-30. Cambiar el directorio actual al directorio dir3, y crear cuatro nuevos directorios llamados dira, dirb, dirc, y dird bajo el directorio actual.
-
-mkdir dira & mkdir dirb & mkdir dirc 
-
-31. Comprobar los permisos de acceso de los directorios recién creados. 
-
-ls -la
+>`ls -la`
 
 **32.** Crear el fichero uno. Quitarle todos los permisos de lectura. Comprobarlo. Intentar borrar dicho fichero. 
 
@@ -297,7 +296,7 @@ ls -la
 >
 >`rm uno`
 
-33. Crear en el directorio actual un directorio carpeta1 con los tres permisos para el propietario, dentro de él fich1 con lectura y escritura para todos y fich2 con lectura y escritura para el propietario y solo lectura para el resto. El directorio carpeta2 con todos los permisos para el propietario y lectura y ejecución para los del mismo grupo. Dentro file1 con lectura y escritura para el propietario y los del grupo y file2 con los mismos para el propietario y solo lectura para el grupo.
+**33.** Crear en el directorio actual un directorio **carpeta1** con los tres permisos para el propietario, dentro de él **fich1** con lectura y escritura para todos y **fich2** con lectura y escritura para el propietario y solo lectura para el resto. El directorio **carpeta2** con todos los permisos para el propietario y lectura y ejecución para los del mismo grupo. Dentro file1 con lectura y escritura para el propietario y los del grupo y **file2** con los mismos para el propietario y solo lectura para el grupo.
 
 >`mkdir carpeta1`
 >
