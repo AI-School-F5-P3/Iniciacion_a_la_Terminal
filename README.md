@@ -4,6 +4,7 @@
 Ejercicios básicos con explicaciones para el uso la terminal en Windows (PowerShell y CMD) y en Linux. Se deberán ir probando todos los comandos según en el sistema operativo que estés usando. Estos ejercicios cubren las tareas básicas necesarias para comenzar a usar la terminal en Windows (PowerShell y CMD) y en Linux. 
 
 ## Ejercicio 1: Navegar por directorios 
+![CD1](https://github.com/AI-School-F5-P3/Iniciacion_a_la_Terminal/assets/18529354/674901b2-9a0d-4a28-84ff-dfb3bee9f2fe)
 
 **Objetivo**: Aprender a moverse entre directorios. 
 
